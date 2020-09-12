@@ -1,0 +1,765 @@
+root@qingfusheng-VirtualBox:~/git/testing/json2/build# cmake ..
+-- Using the single-header code from /root/git/testing/json2/single_include/
+-- Operating system: Linux-5.4.0-45-generic; Distributor ID:	Ubuntu; Description:	Ubuntu 18.04.5 LTS; Release:	18.04; Codename:	bionic; Linux qingfusheng-VirtualBox 5.4.0-45-generic #49~18.04.2-Ubuntu SMP Wed Aug 26 16:29:02 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+-- Compiler: c++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0; Copyright (C) 2017 Free Software Foundation, Inc.; This is free software; see the source for copying conditions.  There is NO; warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/git/testing/json2/build
+root@qingfusheng-VirtualBox:~/git/testing/json2/build# make
+[  0%] Built target doctest_main
+[  3%] Built target test-wstring
+[  4%] Built target test-user_defined_input
+Scanning dependencies of target test-unicode
+[  4%] Building CXX object test/CMakeFiles/test-unicode.dir/src/unit-unicode.cpp.o
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-unicode.cpp:30:
+/root/git/testing/json2/test/src/unit-unicode.cpp: In function ‘void _DOCTEST_ANON_FUNC_42()’:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::parse(IteratorType, IteratorType, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::parser_callback_t, bool, bool) [with IteratorType = __gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char> >; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::parser_callback_t = std::function<bool(int, nlohmann::detail::parse_event_t, nlohmann::basic_json<>&)>]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2050:13: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+             DOCTEST_CAST_TO_VOID(expr)                                                             \
+             ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2073:37: note: in expansion of macro ‘DOCTEST_ASSERT_NOTHROW’
+ #define DOCTEST_CHECK_NOTHROW(expr) DOCTEST_ASSERT_NOTHROW(expr, DT_CHECK_NOTHROW)
+                                     ^~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2477:23: note: in expansion of macro ‘DOCTEST_CHECK_NOTHROW’
+ #define CHECK_NOTHROW DOCTEST_CHECK_NOTHROW
+                       ^~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-unicode.cpp:1204:13: note: in expansion of macro ‘CHECK_NOTHROW’
+             CHECK_NOTHROW(json::parse(i.begin(), i.end()));
+             ^~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-unicode.cpp:36:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:23257:23: note: declared here
+     static basic_json parse(IteratorType first,
+                       ^~~~~
+[  6%] Linking CXX executable test-unicode
+[  6%] Built target test-unicode
+[  9%] Built target test-udt_macro
+[ 10%] Built target test-udt
+Scanning dependencies of target test-ubjson
+[ 10%] Building CXX object test/CMakeFiles/test-ubjson.dir/src/unit-ubjson.cpp.o
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-ubjson.cpp:30:
+/root/git/testing/json2/test/src/unit-ubjson.cpp: In function ‘void _DOCTEST_ANON_FUNC_2()’:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_ubjson(InputType&&, bool, bool) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2069:58: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_WITH_AS(expr, message, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_WITH_AS, message, __VA_ARGS__)
+                                                          ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2476:30: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_WITH_AS’
+ #define CHECK_THROWS_WITH_AS DOCTEST_CHECK_THROWS_WITH_AS
+                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-ubjson.cpp:809:21: note: in expansion of macro ‘CHECK_THROWS_WITH_AS’
+                     CHECK_THROWS_WITH_AS(json::from_ubjson(vec2), "[json.exception.parse_error.115] parse error at byte 5: syntax error while parsing UBJSON high-precision number: invalid number text: 1A", json::parse_error);
+                     ^~~~~~~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-ubjson.cpp:32:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24302:23: note: declared here
+     static basic_json from_ubjson(InputType&& i,
+                       ^~~~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-ubjson.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_ubjson(InputType&&, bool, bool) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2069:58: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_WITH_AS(expr, message, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_WITH_AS, message, __VA_ARGS__)
+                                                          ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2476:30: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_WITH_AS’
+ #define CHECK_THROWS_WITH_AS DOCTEST_CHECK_THROWS_WITH_AS
+                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-ubjson.cpp:811:21: note: in expansion of macro ‘CHECK_THROWS_WITH_AS’
+                     CHECK_THROWS_WITH_AS(json::from_ubjson(vec3), "[json.exception.parse_error.115] parse error at byte 5: syntax error while parsing UBJSON high-precision number: invalid number text: 1.", json::parse_error);
+                     ^~~~~~~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-ubjson.cpp:32:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24302:23: note: declared here
+     static basic_json from_ubjson(InputType&& i,
+                       ^~~~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-ubjson.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_ubjson(InputType&&, bool, bool) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2069:58: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_WITH_AS(expr, message, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_WITH_AS, message, __VA_ARGS__)
+                                                          ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2476:30: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_WITH_AS’
+ #define CHECK_THROWS_WITH_AS DOCTEST_CHECK_THROWS_WITH_AS
+                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-ubjson.cpp:813:21: note: in expansion of macro ‘CHECK_THROWS_WITH_AS’
+                     CHECK_THROWS_WITH_AS(json::from_ubjson(vec4), "[json.exception.parse_error.113] parse error at byte 2: syntax error while parsing UBJSON size: expected length type specification (U, i, I, l, L) after '#'; last byte: 0x02", json::parse_error);
+                     ^~~~~~~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-ubjson.cpp:32:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24302:23: note: declared here
+     static basic_json from_ubjson(InputType&& i,
+                       ^~~~~~~~~~~
+[ 12%] Linking CXX executable test-ubjson
+[ 12%] Built target test-ubjson
+[ 15%] Built target test-to_chars
+[ 16%] Built target test-serialization
+Scanning dependencies of target test-regression2
+[ 18%] Building CXX object test/CMakeFiles/test-regression2.dir/src/unit-regression2.cpp.o
+[ 19%] Linking CXX executable test-regression2
+[ 19%] Built target test-regression2
+Scanning dependencies of target test-regression1
+[ 21%] Building CXX object test/CMakeFiles/test-regression1.dir/src/unit-regression1.cpp.o
+[ 21%] Linking CXX executable test-regression1
+[ 21%] Built target test-regression1
+[ 22%] Built target test-reference_access
+[ 24%] Built target test-pointer_access
+[ 25%] Built target test-class_parser
+[ 27%] Built target test-comparison
+[ 28%] Built target test-class_iterator
+[ 31%] Built target test-convenience
+[ 33%] Built target test-class_const_iterator
+Scanning dependencies of target test-json_patch
+[ 33%] Building CXX object test/CMakeFiles/test-json_patch.dir/src/unit-json_patch.cpp.o
+[ 34%] Linking CXX executable test-json_patch
+[ 34%] Built target test-json_patch
+[ 36%] Built target test-noexcept
+[ 39%] Built target test-iterators2
+[ 40%] Built target test-capacity
+Scanning dependencies of target test-bson
+[ 40%] Building CXX object test/CMakeFiles/test-bson.dir/src/unit-bson.cpp.o
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-bson.cpp:30:
+/root/git/testing/json2/test/src/unit-bson.cpp: In function ‘void _DOCTEST_ANON_FUNC_52()’:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_bson(InputType&&, bool, bool) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-bson.cpp:870:5: note: in expansion of macro ‘CHECK_THROWS_AS’
+     CHECK_THROWS_AS(json::from_bson(input), json::parse_error);
+     ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-bson.cpp:32:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24415:23: note: declared here
+     static basic_json from_bson(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-bson.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_bson(InputType&&, bool, bool) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2039:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2065:46: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_WITH’
+ #define DOCTEST_CHECK_THROWS_WITH(expr, ...) DOCTEST_ASSERT_THROWS_WITH(expr, DT_CHECK_THROWS_WITH, __VA_ARGS__)
+                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2475:27: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_WITH’
+ #define CHECK_THROWS_WITH DOCTEST_CHECK_THROWS_WITH
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-bson.cpp:871:5: note: in expansion of macro ‘CHECK_THROWS_WITH’
+     CHECK_THROWS_WITH(json::from_bson(input), "[json.exception.parse_error.112] parse error at byte 15: syntax error while parsing BSON binary: byte array length cannot be negative, is -1");
+     ^~~~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-bson.cpp:32:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24415:23: note: declared here
+     static basic_json from_bson(InputType&& i,
+                       ^~~~~~~~~
+[ 42%] Linking CXX executable test-bson
+[ 42%] Built target test-bson
+[ 45%] Built target test-class_lexer
+[ 46%] Built target test-hash
+[ 50%] Built target test-readme
+Scanning dependencies of target test-cbor
+[ 51%] Building CXX object test/CMakeFiles/test-cbor.dir/src/unit-cbor.cpp.o
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/src/unit-cbor.cpp: In function ‘void _DOCTEST_ANON_FUNC_2()’:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2050:13: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+             DOCTEST_CAST_TO_VOID(expr)                                                             \
+             ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2073:37: note: in expansion of macro ‘DOCTEST_ASSERT_NOTHROW’
+ #define DOCTEST_CHECK_NOTHROW(expr) DOCTEST_ASSERT_NOTHROW(expr, DT_CHECK_NOTHROW)
+                                     ^~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2477:23: note: in expansion of macro ‘DOCTEST_CHECK_NOTHROW’
+ #define CHECK_NOTHROW DOCTEST_CHECK_NOTHROW
+                       ^~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:1594:17: note: in expansion of macro ‘CHECK_NOTHROW’
+                 CHECK_NOTHROW(json::from_cbor(input));
+                 ^~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2050:13: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+             DOCTEST_CAST_TO_VOID(expr)                                                             \
+             ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2073:37: note: in expansion of macro ‘DOCTEST_ASSERT_NOTHROW’
+ #define DOCTEST_CHECK_NOTHROW(expr) DOCTEST_ASSERT_NOTHROW(expr, DT_CHECK_NOTHROW)
+                                     ^~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2477:23: note: in expansion of macro ‘DOCTEST_CHECK_NOTHROW’
+ #define CHECK_NOTHROW DOCTEST_CHECK_NOTHROW
+                       ^~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:1601:17: note: in expansion of macro ‘CHECK_NOTHROW’
+                 CHECK_NOTHROW(json::from_cbor(input));
+                 ^~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/src/unit-cbor.cpp: In function ‘void _DOCTEST_ANON_FUNC_268()’:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2554:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2555:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2573:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2574:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2588:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2589:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2590:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::ignore), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2605:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2606:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2621:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2622:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2623:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::ignore), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2640:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2641:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2658:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2659:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2660:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::ignore), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2681:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2682:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2703:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2704:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::error), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2705:13: note: in expansion of macro ‘CHECK_THROWS_AS’
+             CHECK_THROWS_AS(json::from_cbor(v_tagged, true, true, json::cbor_tag_handler_t::ignore), json::parse_error);
+             ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = const std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2023:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2061:44: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_AS’
+ #define DOCTEST_CHECK_THROWS_AS(expr, ...) DOCTEST_ASSERT_THROWS_AS(expr, DT_CHECK_THROWS_AS, "", __VA_ARGS__)
+                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2474:25: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_AS’
+ #define CHECK_THROWS_AS DOCTEST_CHECK_THROWS_AS
+                         ^~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2720:9: note: in expansion of macro ‘CHECK_THROWS_AS’
+         CHECK_THROWS_AS(json::from_cbor(vec), json::parse_error);
+         ^~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+In file included from /root/git/testing/json2/test/thirdparty/doctest/doctest_compatibility.h:6:0,
+                 from /root/git/testing/json2/test/src/unit-cbor.cpp:30:
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:1742:24: warning: ignoring return value of ‘static nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType> nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::from_cbor(InputType&&, bool, bool, nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t) [with InputType = const std::vector<unsigned char>&; ObjectType = std::map; ArrayType = std::vector; StringType = std::__cxx11::basic_string<char>; BooleanType = bool; NumberIntegerType = long int; NumberUnsignedType = long unsigned int; NumberFloatType = double; AllocatorType = std::allocator; JSONSerializer = nlohmann::adl_serializer; BinaryType = std::vector<unsigned char>; nlohmann::basic_json<ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType>::cbor_tag_handler_t = nlohmann::detail::cbor_tag_handler_t]’, declared with attribute warn_unused_result [-Wunused-result]
+     static_cast<void>(x);                                                                          \
+                        ^
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2039:17: note: in expansion of macro ‘DOCTEST_CAST_TO_VOID’
+                 DOCTEST_CAST_TO_VOID(expr)                                                         \
+                 ^~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2065:46: note: in expansion of macro ‘DOCTEST_ASSERT_THROWS_WITH’
+ #define DOCTEST_CHECK_THROWS_WITH(expr, ...) DOCTEST_ASSERT_THROWS_WITH(expr, DT_CHECK_THROWS_WITH, __VA_ARGS__)
+                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/thirdparty/doctest/doctest.h:2475:27: note: in expansion of macro ‘DOCTEST_CHECK_THROWS_WITH’
+ #define CHECK_THROWS_WITH DOCTEST_CHECK_THROWS_WITH
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+/root/git/testing/json2/test/src/unit-cbor.cpp:2721:9: note: in expansion of macro ‘CHECK_THROWS_WITH’
+         CHECK_THROWS_WITH(json::from_cbor(vec), "[json.exception.parse_error.112] parse error at byte 9: syntax error while parsing CBOR value: invalid byte: 0xD8");
+         ^~~~~~~~~~~~~~~~~
+In file included from /root/git/testing/json2/test/src/unit-cbor.cpp:33:0:
+/root/git/testing/json2/single_include/nlohmann/json.hpp:24043:23: note: declared here
+     static basic_json from_cbor(InputType&& i,
+                       ^~~~~~~~~
+[ 53%] Linking CXX executable test-cbor
+[ 53%] Built target test-cbor
+[ 56%] Built target test-algorithms
+[ 57%] Built target test-element_access2
+[ 59%] Built target test-allocator
+[ 60%] Built target test-items
+[ 62%] Built target test-constructor2
+[ 63%] Built target test-alt-string
+[ 66%] Built target test-assert_macro
+[ 68%] Built target test-ordered_map
+[ 69%] Built target test-conversions
+[ 72%] Built target test-ordered_json
+[ 74%] Built target test-constructor1
+[ 75%] Built target test-deserialization
+[ 78%] Built target test-element_access1
+[ 80%] Built target test-meta
+Scanning dependencies of target test-inspection
+[ 81%] Building CXX object test/CMakeFiles/test-inspection.dir/src/unit-inspection.cpp.o
+[ 83%] Linking CXX executable test-inspection
+[ 83%] Built target test-inspection
+[ 84%] Built target test-iterators1
+[ 86%] Built target test-json_pointer
+[ 89%] Built target test-modifiers
+Scanning dependencies of target test-testsuites
+[ 90%] Building CXX object test/CMakeFiles/test-testsuites.dir/src/unit-testsuites.cpp.o
+[ 90%] Linking CXX executable test-testsuites
+[ 90%] Built target test-testsuites
+[ 93%] Built target test-concepts
+[ 96%] Built target test-large_json
+[ 98%] Built target test-merge_patch
+Scanning dependencies of target test-msgpack
+[ 98%] Building CXX object test/CMakeFiles/test-msgpack.dir/src/unit-msgpack.cpp.o
+[100%] Linking CXX executable test-msgpack
+[100%] Built target test-msgpack
