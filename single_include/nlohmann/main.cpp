@@ -40,7 +40,7 @@ int main(){
 	json array_not_object = json::array({ {"currency", "USD"}, {"value", 42.99} });
 	cout<<"array_not_object:"<<array_not_object<<endl;
 *//*
-	//ÐòÁÐ»¯ 
+	//ï¿½ï¿½ï¿½Ð»ï¿½ 
 	json j = "{\"happy\":true,\"pi\":3.141}"_json;
 	cout<<j<<endl;
 	auto j2=R"({"happy":true,"pi":3.141})"_json;
@@ -57,7 +57,7 @@ int main(){
 	cout<<s<<endl;
 	cout<<s2<<endl;*/
 /*	json j = "{\"happy\":true,\"pi\":3.141}"_json;
-	string s = j.dump();//dumpÎª¼ä¸ô 
+	string s = j.dump();//dumpÎªï¿½ï¿½ï¿½ 
 	cout<<j.dump(4)<<endl;*/
 /*	json j_string = "this is a string";
 	auto cpp_string = j_string.get<string>();
@@ -75,7 +75,17 @@ int main(){
 	cout<<j<<endl;
 	json j2 = json::parse(v);
 	cout<<j2;*/
-	
+	json j;
+	j.push_back("foo");
+	j.push_back(1);
+	j.push_back(true);
+	j.emplace_back(1.78);
+	for(json::iterator it=j.begin();it!=j.end();++it){
+		std::cout<<*it<<endl;
+	}
+	for(auto& element : j){
+		std::cout<<element<<endl;
+	}
   	return 0;
 }
 
