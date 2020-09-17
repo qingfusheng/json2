@@ -103,7 +103,7 @@ int main(){
 	cout<<j.is_object()<<endl;
 	cout<<j.is_array()<<endl;
 	cout<<j.is_string()<<endl;*/
-	json o;
+	/*json o;
 	o["foo"]=23;
 	o["bar"]=false;
 	o["baz"]=3.141;
@@ -114,9 +114,9 @@ int main(){
 	for(auto& el:o.items()){
 		std::cout<<el.key()<<":"<<el.value()<<"\n";
 	}
-	for(auto& [key,value]:o.items()){
-		std::cout<<key<<" : "<<value<<"\n";
-	}
+	//for(auto& [key,value]:o.items()){//ע�⣬�˴��﷨��c++1z����gnu++1z֧�� 
+	//	std::cout<<key<<" : "<<value<<"\n";
+	//}
 	if(o.contains("foo"))
 		std::cout<<"There is an entry with key 'foo'"<<endl;
 	if(o.find("foo")!=o.end()){
@@ -126,7 +126,13 @@ int main(){
 	int fob_present = o.count("fob");
 	cout<<"foo_present:"<<foo_present<<" "<<"fob_present:"<<fob_present<<endl;
 	o.erase("foo");
-	cout<<o<<endl;
+	cout<<o<<endl;*/
+	std::vector<int> c_vector {1,2,3,4};
+	json j_vec(c_vector);
+	cout<<j_vec<<endl;//[1,2,3,4]
+	std::deque<double> c_deque{1.2,2.3,3.4,5.6};
+	json j_deque(c_deque);
+	cout<<j_deque<<endl;
   	return 0;
 }
 
