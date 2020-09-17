@@ -75,7 +75,7 @@ int main(){
 	cout<<j<<endl;
 	json j2 = json::parse(v);
 	cout<<j2;*/
-	json j;
+/*	json j;
 	j.push_back("foo");
 	j.push_back(1);
 	j.push_back(true);
@@ -86,6 +86,47 @@ int main(){
 	for(auto& element : j){
 		std::cout<<element<<endl;
 	}
+	cout<<j<<endl; 
+	const auto tmp = j[0].get<std::string>();
+	j[1]=42;
+	bool foo = j.at(2);
+	cout<<foo<<endl;
+	j = "[\"foo\",42,true]"_json;
+	cout<<j<<endl;
+	cout<<j.size()<<endl;
+	cout<<j.empty()<<endl;
+	j.type();
+	j.clear();
+	cout<<j.is_null()<<endl;
+	cout<<j.is_boolean()<<endl;
+	cout<<j.is_number()<<endl;
+	cout<<j.is_object()<<endl;
+	cout<<j.is_array()<<endl;
+	cout<<j.is_string()<<endl;*/
+	json o;
+	o["foo"]=23;
+	o["bar"]=false;
+	o["baz"]=3.141;
+	o.emplace("weather","sunny");
+	for(json::iterator it=o.begin();it!=o.end();it++){
+		std::cout<<it.key()<<":"<<it.value()<<"\n";
+	}
+	for(auto& el:o.items()){
+		std::cout<<el.key()<<":"<<el.value()<<"\n";
+	}
+	for(auto& [key,value]:o.items()){
+		std::cout<<key<<" : "<<value<<"\n";
+	}
+	if(o.contains("foo"))
+		std::cout<<"There is an entry with key 'foo'"<<endl;
+	if(o.find("foo")!=o.end()){
+		std::cout<<"There is an entry with key 'foo'"<<endl;
+	}
+	int foo_present = o.count("foo");
+	int fob_present = o.count("fob");
+	cout<<"foo_present:"<<foo_present<<" "<<"fob_present:"<<fob_present<<endl;
+	o.erase("foo");
+	cout<<o<<endl;
   	return 0;
 }
 
