@@ -2,6 +2,11 @@
 #include"json.hpp"
 #include<iomanip>
 #include<vector>
+#include<deque>
+#include<list> 
+#include<array>
+#include<set>
+#include<unordered_set>
 using json=nlohmann::json;
 using namespace std;
 int main(){
@@ -103,7 +108,7 @@ int main(){
 	cout<<j.is_object()<<endl;
 	cout<<j.is_array()<<endl;
 	cout<<j.is_string()<<endl;*/
-	/*json o;
+/*	json o;
 	o["foo"]=23;
 	o["bar"]=false;
 	o["baz"]=3.141;
@@ -127,12 +132,63 @@ int main(){
 	cout<<"foo_present:"<<foo_present<<" "<<"fob_present:"<<fob_present<<endl;
 	o.erase("foo");
 	cout<<o<<endl;*/
-	std::vector<int> c_vector {1,2,3,4};
+/*	std::vector<int> c_vector {1,2,3,4};
 	json j_vec(c_vector);
 	cout<<j_vec<<endl;//[1,2,3,4]
 	std::deque<double> c_deque{1.2,2.3,3.4,5.6};
 	json j_deque(c_deque);
 	cout<<j_deque<<endl;
+	std::list<bool> c_list {true,true,false,true};
+	json j_list(c_list);
+	cout<<j_list<<endl;
+	std::forward_list<int64_t> c_flist{12345345654678,34563457887654,23456784576545,76545678765456};
+	json j_flist(c_flist);
+	cout<<j_flist<<endl;
+	std::array<unsigned long,4>c_array{{1,2,3,4}};
+	json j_array(c_array);
+	cout<<j_array<<endl;
+	std::set<std::string> c_set{"one","two","three","four","one"};
+	json j_set(c_set);
+	cout<<j_set<<endl;
+	std::unordered_set<std::string>c_uset{"one","two","three","four","one"};
+	json j_uset(c_set);
+	cout<<j_uset<<endl;
+	std::multiset<std::string> c_mset{"one","two","three","four","one"};
+	json j_mset(c_mset);
+	cout<<j_mset<<endl;
+	std::unordered_multiset<std::string> c_umset{"one","two","three","four","one"};
+	json j_umset(c_umset);
+	cout<<j_umset<<endl;*/
+	
+/*	std::map<std::string, int> c_map { {"one", 1}, {"two", 2}, {"three", 3} };  // map
+	json j_map(c_map);
+	cout<<j_map<<endl;// {"one": 1, "three": 3, "two": 2 }
+	std::unordered_map<const char*, double> c_umap { {"one", 1.2}, {"two", 2.3}, {"three", 3.4} };
+	json j_umap(c_umap);
+	cout<<j_umap<<endl;// {"one": 1.2, "two": 2.3, "three": 3.4}
+	std::multimap<std::string, bool> c_mmap { {"one", true}, {"two", true}, {"three", false}, {"three", true} };
+	json j_mmap(c_mmap); // only one entry for key "three" is used
+	cout<<j_mmap<<endl;// maybe {"one": true, "two": true, "three": true}
+	std::unordered_multimap<std::string, bool> c_ummap { {"one", true}, {"two", true}, {"three", false}, {"three", true} };
+	json j_ummap(c_ummap); // only one entry for key "three" is used
+	cout<<j_ummap<<endl;// maybe {"one": true, "two": true, "three": true}*/
+	// a JSON value
+	json j_original = R"({
+  		"baz": ["one", "two", "three"],
+  		"foo": "bar"
+	})"_json;
+	cout<<j_original<<endl;
+	j_original["/baz/1"_json_pointer];
+	cout<<j_original<<endl;
+	json j_patch = R"([
+ 		{ "op": "replace", "path": "/baz", "value": "boo" },
+  		{ "op": "add", "path": "/hello", "value": ["world"] },
+  		{ "op": "remove", "path": "/foo"}
+	])"_json;
+	json j_result = j_original.patch(j_patch);
+	cout<<j_result<<endl;
+	cout<<"****hello****"<<endl;
+	cout<<json::diff(j_result, j_original)<<endl;
   	return 0;
 }
 
