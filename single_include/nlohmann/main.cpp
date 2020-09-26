@@ -10,6 +10,7 @@ namespace ns{
 	};
 }
 int main(){
+ /* //not recommended
     ns::person p = {"Ned Flanders","744 Evergreen Terrace",60};
     json j;
     j["name"]=p.name;
@@ -21,5 +22,8 @@ int main(){
         j["address"].get<std::string>(),
         j["age"].get<int>()
     };
-    cout<<p1.age<<endl;
+    cout<<p1.age<<endl;*/
+    ns::person p {"Ned Flanders","744 Evergreen Terrace",60};
+    json j = p;
+    std::cout<<j<<std::endl;
 }

@@ -205,8 +205,8 @@ int main(){
 	})"_json;
 	cout<<j_patch<<endl;
 	j_document.merge_patch(j_patch);
-	cout<<j_document<<endl;*/
-/*	std::string s1="Hello World!"; // implicit conversions隐式转换
+	cout<<j_document<<endl;
+	std::string s1="Hello World!"; // implicit conversions隐式转换
 	json js = s1;
 	cout<<js<<endl;
 	auto s2= js.get<std::string>();
@@ -225,9 +225,9 @@ int main(){
 	int i=42;
 	json jn = i;
 	auto f = jn.get<double>();
-	double f2 = jn;
+	double f2 = jb;
 	double f3;
-	f3 = jn;
+	f3 = jb;
 	cout<<f<<endl<<f2<<endl<<f3<<endl;
 	char ch = 'A';
 	json j_default = ch; //65
